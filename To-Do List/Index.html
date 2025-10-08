@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>To-Do List</h1>
+
+        <div class="date" id="today">
+          <!--TANGGAL HARI INI-->
+        </div>
+        <div class="date" id="time">
+          <!--WAKTU-->
+        </div>
+      </header>
+
+      <section class="progress_section">
+        <!--sama kek div-->
+        <div class="progress_info">
+          <span><b>Progress:</b></span>
+          <span id="progress_text">0/0 Missions Completed</span>
+        </div>
+
+        <div class="progress_bar">
+          <div class="progress_fill" id="progress_fill"></div>
+        </div>
+      </section>
+
+      <section class="input_section">
+        <input id="input_task" type="text" placeholder="Tulis task baru" />
+        <button id="btn_add">Add</button>
+      </section>
+
+      <section class="task_section">
+        <h3>Daftar List:</h3>
+        <div class="task_item"></div>
+      </section>
+    </div>
+
+    <script src="JavaScript.js"></script>
+  </body>
+</html>
