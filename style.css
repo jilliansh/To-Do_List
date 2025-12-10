@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+* {
+  /*html body*/
+  margin: 0;
+  padding: 0;
+  /*box-sizing: border-box; /* hitung padding dalam ukurannya sendiri */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: aliceblue;
+  display: flex; /*menyesuaikan dengn container*/
+  /*align-items: center;*/
+  justify-content: center; /*content di tengah*/
+  padding: 50px;
+  min-height: 100vh; /*spy ga bisa diskrol ke bawah*/
+  overflow-y: hidden;
+}
+
+.container {
+  max-width: 400px; /*for desktop*/
+  width: 100%; /*ukuran normal*/
+  border: 2px solid #7398bc;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 485px;
+}
+
+.header {
+  background-color: #96bfe6;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  h1 {
+    font-size: 30pt;
+    margin-bottom: 10px;
+  }
+}
+
+.date {
+  color: #fff5cf;
+}
+
+.progress_section {
+  padding: 15px 30px;
+  background: #ffffff;
+}
+
+.progress_info {
+  color: #4f6a84;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.progress_bar {
+  width: 100%;
+  height: 10px;
+  background: #83a8cd;
+  border-radius: 4px;
+  overflow: hidden; /*hides the content exceeding the bar*/
+}
+
+.progress_fill {
+  height: 100%;
+  background: #f0e1a6;
+  width: 35%;
+  border-radius: 0px;
+  transition: width 0.3s ease;
+}
+
+.input_section {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  border: 1px solid #7398bc;
+  border-radius: 4px;
+  font-size: 11pt;
+  padding: 2px 5px;
+  flex: 1;
+  color: #4f6a84;
+  outline: #fff;
+}
+
+button {
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 1px solid #7398bc;
+  background: aliceblue;
+  cursor: pointer;
+  color: #4f6a84;
+  margin: 0 5px;
+
+  transition: transform 0.5s ease;
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
+  transition: box-shadow 0.5s ease;
+}
+
+button:hover {
+  transform: scale(1.025);
+  box-shadow: 0px 5px 5px #c5d3e4;
+  background-color: #96bfe6;
+  color: #fff5cf;
+}
+
+.task_section {
+  height: 100%;
+  max-height: 190px;
+  overflow-y: auto;
+  padding: 15px 30px;
+  background: #f0e1a6;
+  color: #4f6a84;
+  h3 {
+    font-size: 15pt;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+}
+
+.task_section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task_section::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #7398bc;
+}
+
+.task_item {
+  display: flex; /* kalo windownya dikecilin, jadi turun ke bawah */
+  align-items: flex-start; /* vertical center */
+  gap: 15px; /* jarak antar semua elemen */
+  padding: 7px 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  min-height: 20px; /* spy konsisten */
+}
+
+.task_text {
+  /* buat isi list */
+  flex: 1; /* cobain pas uda ada tombol del */
+  color: #4f6a84;
+  word-wrap: break-word; /* kalo textnya kepanjangan, turun ke bawah */
+  overflow-wrap: break-word; /* sama kek word-wrap tapi support browser modern */
+  word-break: break-word; /* buat browser lama */
+  max-width: calc(100%-60px); /* kasi ruang buat tombol */
+  padding-right: 10px;
+  line-height: 1.3;
+}
+
+.task_text.completed {
+  text-decoration: line-through;
+  color: #8fa7bd;
+}
+
+.task_action {
+  flex-shrink: 0; /* supaya tombol ga ngecil */
+  display: flex;
+  align-items: flex-start; /* sejajar dgn teks */
+  margin-top: 2px;
+}
+
+.action_button {
+  /* del button */
+  color: #4f6a84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 25px;
+  padding: 0 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.action_button:hover {
+  transform: scale(1.1);
+}
+
+.del_button {
+  background-color: #f0e1a6;
+}
